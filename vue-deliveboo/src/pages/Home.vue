@@ -117,6 +117,7 @@ export default {
           <div
             @click="categoryCall(category.name)"
             class="d-flex flex-column gap-2"
+            :class="{ 'border-20': store.darkMode, darkMode: store.darkMode }"
           >
             <img
               class="category_img"

@@ -11,6 +11,7 @@ export const store = reactive({
   selectedCategories: [], // Categorie selezionate dall'utente
   cart: savedCart, // Carrello inizializzato dal localStorage
   total: savedTotal,
+  darkMode: false,
   categories: [
     {
       id: "1",

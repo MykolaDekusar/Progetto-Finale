@@ -136,7 +136,10 @@ export default {
     <div class="row">
       <div class="col-xxl-8 col-sm-12 px-4">
         <!-- immagine ristorante e dati ristorante -->
-        <div class="row mx-auto restaurant-card bg-white shadow-box">
+        <div
+          class="row mx-auto restaurant-card shadow-box"
+          :class="{ ' darkMode': store.darkMode, 'bg-white': !store.darkMode }"
+        >
           <div class="col-lg-6 col-sm-12 p-3 h-100">
             <img
               class="img_restaurant w-100 h-100"
@@ -179,7 +182,13 @@ export default {
                 v-for="plate in plate"
                 :key="plate.id"
               >
-                <div class="plate-cards bg-white p-3">
+                <div
+                  class="plate-cards p-3"
+                  :class="{
+                    ' darkMode': store.darkMode,
+                    'bg-white': !store.darkMode,
+                  }"
+                >
                   <div class="row justify-content-between h-100">
                     <div class="col-xxl-5 col-xl-12 h-100">
                       <img

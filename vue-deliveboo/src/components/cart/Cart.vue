@@ -28,7 +28,10 @@ export default {
 </script>
 
 <template>
-  <div class="cart-outer bg-white p-3">
+  <div
+    class="cart-outer p-3"
+    :class="{ ' darkMode': store.darkMode, 'bg-white': !store.darkMode }"
+  >
     <h2 class="cart-title text-center">Il tuo ordine</h2>
     <div
       class="cart-data d-flex flex-column justify-content-center align-items-center"
@@ -36,6 +39,11 @@ export default {
       <ul v-if="cart.length > 0" class="p-0 m-0">
         <li
           class="d-flex justify-content-between align-items-center mb-2 ps-1 flex-wrap"
+          :class="{
+            'bg-white': store.darkMode,
+
+            'text-dark': store.darkMode,
+          }"
           v-for="item in cart"
           :key="item.id"
         >
@@ -105,7 +113,6 @@ export default {
   justify-content: space-between;
   border: 2px solid#ff9553b9;
   position: sticky;
-  color: black;
   top: 164px;
   min-height: 500px;
   border-radius: 10px;

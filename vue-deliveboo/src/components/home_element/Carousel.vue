@@ -4,9 +4,15 @@ import pizzaImage from "@/assets/img/pizza.png";
 import hamburgerImage from "@/assets/img/hamburger.png";
 import sushiImage from "@/assets/img/sushi.png";
 import iceCreamImage from "@/assets/img/ice-cream.png";
+import { store } from "@/store";
 
 export default {
   name: "Carousel",
+  data() {
+    return {
+      store,
+    };
+  },
   setup() {
     // Array di immagini e testi
     const images = ref([
@@ -95,7 +101,7 @@ export default {
           ></span>
         </div>
         <div>
-          <p>{{ text }}</p>
+          <p :class="{ 'text-light': store.darkMode }">{{ text }}</p>
         </div>
       </div>
     </div>
