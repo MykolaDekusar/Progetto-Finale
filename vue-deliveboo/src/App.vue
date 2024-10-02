@@ -1,9 +1,15 @@
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import { store } from "./store";
 
 export default {
   name: "App",
+  data() {
+    return {
+      store,
+    };
+  },
   components: {
     Header,
     Footer,
@@ -14,7 +20,10 @@ export default {
   <!-- Header -->
   <Header />
 
-  <main class="p-5 container-fluid background-main">
+  <main
+    class="p-5 container-fluid background-main"
+    :class="{ darkMode: store.darkMode }"
+  >
     <div class="content">
       <router-view></router-view>
       <!-- Qui verranno caricati i tuoi componenti -->

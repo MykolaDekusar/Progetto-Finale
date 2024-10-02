@@ -1,20 +1,34 @@
 <script>
+import { store } from "../store";
 export default {
   name: "Header",
+  data() {
+    return {
+      store,
+    };
+  },
+
   methods: {
     goToLogin() {
       window.location.href = "http://127.0.0.1:8000/login"; // Route Blade per il login
     },
-    goToRegister() {
-      window.location.href = "http://127.0.0.1:8000/register"; // Route Blade per la registrazione
+    activateDark() {
+      this.store.darkMode = !this.store.darkMode;
+      console.log(this.store.darkMode);
     },
+    // goToRegister() {
+    //   window.location.href = "http://127.0.0.1:8000/register"; // Route Blade per la registrazione
+    // },
   },
 };
 </script>
 
 <template>
   <header>
-    <div class="container-fluid d-flex justify-content-between">
+    <div
+      class="container-fluid d-flex justify-content-between py-4"
+      :class="{ darkMode: store.darkMode }"
+    >
       <div class="left">
         <a href="/">
           <img
@@ -28,20 +42,16 @@ export default {
         <!-- Sezione 1 -->
         <div class="right-section align-items-center show">
           <button @click="goToLogin" class="btn btn-primary button-shadow">
-            <i class="fa fa-user"></i> Accedi
+            <i class="fa fa-user"></i> Accedi/Registrati
           </button>
-          <button
-            @click="goToRegister"
-            class="btn btn-primary ms-4 button-shadow"
-          >
-            Crea un account
-          </button>
+
           <div class="right-section ms-4">
             <img
               src="@/assets/img/italy-flag.png"
               alt="Italian Flag"
               class="flag"
             />
+            <button @click="activateDark">Dark Mode</button>
           </div>
         </div>
 
@@ -118,7 +128,6 @@ export default {
 
 header {
   background-color: rgb(236, 236, 236);
-  padding: 25px 0; /* Aggiungi del padding sopra e sotto */
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease; /* Transizione per un effetto fluido */
   z-index: 100; /* Mantiene l'header sopra gli altri elementi */
