@@ -29,7 +29,7 @@ export default {
       class="container-fluid d-flex justify-content-between py-4"
       :class="{ darkMode: store.darkMode }"
     >
-      <div class="left">
+      <div class="left d-flex align-items-center">
         <a href="/">
           <img
             src="@/assets/img/logo_boo.png"
@@ -38,10 +38,16 @@ export default {
           />
         </a>
       </div>
-      <div class="right">
+      <div :class="{ 'dark-mode': store.darkMode }" class="right">
         <!-- Sezione 1 -->
         <div class="right-section align-items-center show">
-          <button @click="goToLogin" class="btn btn-primary button-shadow">
+          <router-link
+            class="no-style-link zero-padding"
+            :to="{ name: 'home' }"
+          >
+            <button class="btn fw-bold">Home</button>
+          </router-link>
+          <button @click="goToLogin" class="btn fw-semibold">
             <i class="fa fa-user"></i> Accedi/Registrati
           </button>
           <!-- dark mode -->
@@ -143,6 +149,12 @@ header {
 
 .toggle {
   transform: scale(0.8); /* Riduci la dimensione del checkbox */
+}
+.btn {
+  color: #383838;
+}
+.dark-mode .btn {
+  color: rgb(224, 224, 224);
 }
 
 .title {

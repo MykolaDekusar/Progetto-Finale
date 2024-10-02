@@ -140,9 +140,9 @@ export default {
           class="row mx-auto restaurant-card shadow-box"
           :class="{ ' darkMode': store.darkMode, 'bg-white': !store.darkMode }"
         >
-          <div class="col-lg-5 col-sm-12 p-3 h-100">
+          <div class="col-lg-6 col-sm-12 p-3 h-100">
             <img
-              class="img_restaurant w-100"
+              class="img_restaurant w-100 h-100"
               :src="baseImageUrl + restaurant.img"
               :alt="restaurant.restaurant_name"
             />
@@ -150,7 +150,7 @@ export default {
           <!-- dettagli ristorante -->
 
           <div
-            class="col-lg-7 col-sm-12 d-flex flex-column h-100 justify-content-center restaurant-card-content"
+            class="col-lg-6 col-sm-12 d-flex flex-column h-100 justify-content-center restaurant-card-content"
           >
             <h1 class="m-0 mt-2">{{ restaurant.restaurant_name }}</h1>
             <hr class="orange-border my-2" />
@@ -281,7 +281,7 @@ export default {
 }
 
 .restaurant-card {
-  height: 300px;
+  height: 350px;
   border: 2px solid#ff9553b9;
   border-radius: 10px;
 }
