@@ -92,7 +92,13 @@ export default {
   <button class="ms-3 mb-3 text-white btn btn-back" @click="$router.go(-1)">
     Torna indietro
   </button>
-  <div class="container-sm border-orange bg-white rounded p-5">
+  <div
+    class="container-sm border-orange rounded p-5"
+    :class="{
+      ' darkMode': store.darkMode,
+      'bg-white': !store.darkMode,
+    }"
+  >
     <div class="row">
       <!-- Form del cliente -->
       <div class="col-12">
@@ -158,7 +164,13 @@ export default {
 
           <!-- riepilogo ordine -->
           <div class="braintree content braintree-color rounded p-3">
-            <div class="content p-3 bg-white mb-4">
+            <div
+              class="content p-3 mb-4"
+              :class="{
+                ' darkMode': store.darkMode,
+                'bg-white': !store.darkMode,
+              }"
+            >
               <ul class="list-unstyled">
                 <li v-for="item in cart" :key="item.id">
                   {{ item.quantity }} - {{ item.name }} -

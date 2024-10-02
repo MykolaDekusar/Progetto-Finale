@@ -1,5 +1,11 @@
 <script>
+import { store } from "@/store";
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
   name: "Braintree",
   props: {
     validateFields: {
