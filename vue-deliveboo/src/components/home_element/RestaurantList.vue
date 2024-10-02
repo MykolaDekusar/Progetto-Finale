@@ -53,7 +53,7 @@ export default {
   <div class="row gap-2">
     <h2 class="p-0">Ristoranti Disponibili</h2>
     <div
-      class="col-12 restaurant-card my-2"
+      class="col-12 restaurant-card rounded my-2"
       :class="{ ' darkMode': store.darkMode, 'bg-white': !store.darkMode }"
       v-for="restaurant in store.restaurants"
       :key="restaurant.id"
@@ -63,30 +63,26 @@ export default {
         :to="{ name: 'RestaurantDetail', params: { id: restaurant.id } }"
       >
         <div class="row h-100">
-          <div class="card-50 col-lg-5 col-md-12">
+          <div class="card-50 col-lg-4 col-md-12 p-0">
             <img
-              class="restaurant_img rounded"
+              class="restaurant_img rounded-start"
               :src="baseImageUrl + restaurant.img"
               :alt="restaurant.name"
             />
           </div>
-          <div class="card-50 col-lg-7 col-md-12 card-content">
+          <div
+            class="card-50 col-lg-8 col-md-12 card-content d-flex flex-wrap flex-column justify-content-center"
+          >
             <div class="d-flex justify-content-between">
-              <h2>{{ restaurant.restaurant_name }}</h2>
+              <h2 class="fw-bold">{{ restaurant.restaurant_name }}</h2>
             </div>
             <hr class="orange-border my-2" />
             <div class="d-flex justify-content-between flex-wrap">
-              <h3 class="me-2">Indirizzo:</h3>
               <h3>{{ restaurant.address }}</h3>
             </div>
+
             <hr class="orange-border my-2" />
             <div class="d-flex justify-content-between flex-wrap">
-              <h4 class="me-2">Chi siamo:</h4>
-              <p class="text-start">{{ restaurant.description }}</p>
-            </div>
-            <hr class="orange-border my-2" />
-            <div class="d-flex justify-content-between flex-wrap">
-              <h4 class="me-2">Cucina:</h4>
               <h4
                 class="d-flex gap-2 flex-wrap"
                 v-if="restaurant.categories.length"
@@ -135,9 +131,7 @@ export default {
   border: 2px solid $primary-color;
 }
 .restaurant-card {
-  border-radius: 5px;
-  height: 350px;
-  padding: 20px;
+  height: 250px;
   border: 2px solid#ff9553b9;
   transition: transform 0.4s;
   box-shadow: 16px 10px 9px 4px rgba(0, 0, 0, 0.3);

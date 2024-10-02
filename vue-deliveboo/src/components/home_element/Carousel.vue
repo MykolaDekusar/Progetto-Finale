@@ -69,8 +69,9 @@ export default {
 </script>
 
 <template>
-  <div class="second-container my-5">
+  <div class="second-container my-2">
     <!-- Carosello immagini -->
+    <h1 class="fw-bold text-center mb-5">Ordina e mangia con Deliveboo</h1>
     <div class="carousel-images">
       <img
         v-for="(image, index) in images"
@@ -109,6 +110,11 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/partials/variables.scss" as *;
+
+h1 {
+  color: $primary-color;
+}
 .second-container {
   margin: 40px;
   background: url("@/assets/img/marble-background.png") no-repeat center center;

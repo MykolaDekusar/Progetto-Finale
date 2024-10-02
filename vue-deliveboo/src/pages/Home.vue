@@ -94,7 +94,7 @@ export default {
   <!-- link top-->
   <a id="top"></a>
   <!-- carosello -->
-  <section class="row my-5">
+  <section class="row">
     <Carousel class="col" />
   </section>
   <!-- ricerca categoria -->
