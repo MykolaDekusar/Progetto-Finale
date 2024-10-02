@@ -44,7 +44,7 @@ export default {
           <button @click="goToLogin" class="btn btn-primary button-shadow">
             <i class="fa fa-user"></i> Accedi/Registrati
           </button>
-
+          <!-- dark mode -->
           <div class="right-section ms-4 fixed-with">
             <div class="d-flex flex-column align-items-center">
               <input
@@ -139,6 +139,14 @@ header {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease; /* Transizione per un effetto fluido */
   z-index: 100; /* Mantiene l'header sopra gli altri elementi */
+}
+
+.toggle {
+  transform: scale(0.8); /* Riduci la dimensione del checkbox */
+}
+
+.title {
+  font-size: 12px; /* Riduci la dimensione del testo */
 }
 
 .container {
