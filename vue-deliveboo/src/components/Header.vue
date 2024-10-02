@@ -45,13 +45,21 @@ export default {
             <i class="fa fa-user"></i> Accedi/Registrati
           </button>
 
-          <div class="right-section ms-4">
-            <img
-              src="@/assets/img/italy-flag.png"
-              alt="Italian Flag"
-              class="flag"
-            />
-            <button @click="activateDark">Dark Mode</button>
+          <div class="right-section ms-4 fixed-with">
+            <div class="d-flex flex-column align-items-center">
+              <input
+                @click="activateDark"
+                id="toggle"
+                class="toggle"
+                type="checkbox"
+              />
+              <div class="background"></div>
+
+              <label v-if="!store.darkMode" for="toggle" class="title"
+                >Attiva dark mode</label
+              >
+              <label v-else for="toggle" class="title">Attiva light mode</label>
+            </div>
           </div>
         </div>
 
@@ -188,6 +196,9 @@ header {
 .hamburger-icon {
   font-size: 30px; /* Puoi regolare questa dimensione */
   color: black; /* Colore dell'icona */
+}
+.fixed-with {
+  width: 165px;
 }
 
 .modal-body {
