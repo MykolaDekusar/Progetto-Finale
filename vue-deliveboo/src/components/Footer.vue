@@ -1,10 +1,39 @@
 <template>
   <footer>
+    <!-- logo -->
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a
+        href="/"
+        class="d-flex flex-wrap justify-content-center"
+        draggable="false"
+      >
+        <img
+          src="@/assets/img/logo_boo.png"
+          alt="DeliveBoo Logo"
+          class="logo"
+          draggable="false"
+        />
+      </a>
+    </div>
+    <div class="text-center mb-3 fw-semibold">Seguici</div>
+    <!-- icon -->
+    <div class="container d-flex flex-wrap justify-content-center mb-5">
+      <div class="social-icons d-flex gap-3">
+        <a href="#"> <font-awesome-icon :icon="['fab', 'square-twitter']" /></a>
+        <a href="#">
+          <font-awesome-icon :icon="['fab', 'square-facebook']"
+        /></a>
+        <a href="#">
+          <font-awesome-icon :icon="['fab', 'square-instagram']"
+        /></a>
+      </div>
+    </div>
+
     <div class="container">
       <div class="d-flex flex-wrap w-100 gap-5 justify-content-center">
         <!-- Prima sezione del footer: Informazioni aziendali -->
         <div class="footer-section col-lg-3 col-md-5 col-sm-10">
-          <h3>Informazioni aziendali</h3>
+          <h3 class="mb-3">Deliveboo</h3>
           <ul>
             <li><a href="#">Chi siamo</a></li>
             <li><a href="#">Termini e condizioni</a></li>
@@ -14,32 +43,24 @@
 
         <!-- Seconda sezione del footer: Link ai social media -->
         <div class="footer-section col-lg-3 col-md-5 col-sm-10">
-          <h3>Contatti</h3>
+          <h3 class="mb-3">Contatti</h3>
           <ul>
-            <li><a href="#">Contattaci</a></li>
             <li><a href="#">Supporto</a></li>
+            <li><a href="#">Domande frequenti</a></li>
+            <li><a href="#">Lavora con noi</a></li>
+            <li><a href="#">Contattaci</a></li>
           </ul>
-          <div class="social-icons">
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'square-twitter']"
-            /></a>
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'square-facebook']"
-            /></a>
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'square-instagram']"
-            /></a>
-          </div>
         </div>
 
-        <!-- Quarta sezione del footer: Mappa -->
-        <div class="map-section p-0 col-lg-3 col-md-12 col-sm-12">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.95373541590466!3d-37.81627957975198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43baffd555%3A0xb1f6c53b37efdf6a!2sMelbourne%20CBD%2C%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1634567890987!5m2!1sen!2sus"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+        <!-- terza colonna -->
+        <div class="footer-section col-lg-3 col-md-5 col-sm-10">
+          <h3 class="mb-3">Scarica l'app</h3>
+          <img
+            src="@/assets/img/download.png"
+            alt="Download_button"
+            class="w-50 apps-button"
+            draggable="false"
+          />
         </div>
       </div>
     </div>
@@ -107,7 +128,7 @@ iframe {
 
 .social-icons a {
   margin-right: 15px;
-  font-size: 24px;
+  font-size: 36px;
   color: white;
   transition: color 0.3s;
 }
@@ -120,6 +141,11 @@ footer p {
   margin-top: 20px;
   font-size: 14px;
   color: #ccc;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 /* Stile per la sezione mappa */
