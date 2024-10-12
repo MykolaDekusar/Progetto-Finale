@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_boo">
                         <img src="/storage/images/logo_boo.png" alt="logo_deliveboo">
@@ -77,6 +77,15 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex flex-column align-items-center">
+                                    <input id="toggle" class="toggle" type="checkbox" />
+                                    <div class="background"></div>
+
+                                    <label for="toggle" class="title">Attiva dark mode</label>
+                                    <label for="toggle" class="title">Attiva light mode</label>
                                 </div>
                             </li>
                         @endguest
