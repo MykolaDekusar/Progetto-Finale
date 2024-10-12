@@ -1,6 +1,7 @@
 // Check the user's preference on page load
 if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-mode");
+    document.getElementById("navbar").classList.add("dark-mode-header");
 }
 const button = document.getElementById("darkModeToggle");
 
@@ -22,7 +23,9 @@ updateButtonText();
 
 function toggleDarkMode() {
     const body = document.body;
+    const header = document.getElementById("navbar");
     body.classList.toggle("dark-mode");
+    header.classList.toggle("dark-mode-header");
 
     // Save the user's preference
     if (body.classList.contains("dark-mode")) {

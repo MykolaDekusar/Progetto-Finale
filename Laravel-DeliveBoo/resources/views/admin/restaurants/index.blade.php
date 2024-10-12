@@ -28,7 +28,7 @@
                 </div>
             @else
                 {{-- colonna foto --}}
-                <div class="row orange-border card-shadow rounded my-5 p-3 relative ">
+                <div class="row orange-border card-shadow rounded my-5 p-3 relative restaurant-card">
                     @if ($restaurant->img)
                         <div class="col-lg-6 col-md-6 col-sm-12 d-flex">
                             <img class="rounded img_ristorante w-100" src="{{ asset('storage/' . $restaurant->img) }}"
@@ -39,7 +39,7 @@
                     {{-- colonna info --}}
                     <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-wrap gap-3 justify-content-between">
-                            <div class=" ">
+                            <div>
                                 <h1 class="fw-semibold">{{ $restaurant->restaurant_name }}</h1>
                                 <p class="ms-1 text-secondary">Creato il: {{ $restaurant->created_at }}</p>
                             </div>
