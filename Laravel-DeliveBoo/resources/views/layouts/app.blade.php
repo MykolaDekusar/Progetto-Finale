@@ -80,13 +80,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="d-flex flex-column align-items-center">
-                                    <input id="toggle" class="toggle" type="checkbox" />
-                                    <div class="background"></div>
+                                <button class="btn deliveboo-orange-background text-light gray-hover button-shadow"
+                                    onclick="toggleDarkMode()" id="darkModeToggle">
 
-                                    <label for="toggle" class="title">Attiva dark mode</label>
-                                    <label for="toggle" class="title">Attiva light mode</label>
-                                </div>
+                                </button>
                             </li>
                         @endguest
                     </ul>
